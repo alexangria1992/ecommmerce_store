@@ -137,3 +137,32 @@ body
     border-color: rgb(65, 179, 156);
    
 } 
+
+#search .navbar-form 
+{
+    float: right;
+}
+
+#search 
+{
+    clear: both;
+    border-top: solid 1px #9adacd;
+    text-align: right;
+}
+
+#search .navbar-form .input-group
+{
+display: table;
+}
+
+#search .navbar-form .input-group .form-control 
+{
+    width: 100%;
+}
+
+/** Slider Styles **/
+
+#slider
+{
+    margin-bottom: 200px;
+}
