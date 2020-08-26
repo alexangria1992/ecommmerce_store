@@ -135,17 +135,120 @@
                             </div>
                         </div>
                     </div>
-                </div>
-           </div>
+
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+                            <a href="details.php">
+                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                                <p class="price">$50</p>
+                                <p class="buttons">
+                                    <a href="details.php" class="btn btn-default">View Details</a>
+                                    <a href="details.php" class="btn btn-primary">
+                                        <i class="fa fa-shopping-cart"></i>Add to Cart
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+                            <a href="details.php">
+                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                                <p class="price">$50</p>
+                                <p class="buttons">
+                                    <a href="details.php" class="btn btn-default">View Details</a>
+                                    <a href="details.php" class="btn btn-primary">
+                                        <i class="fa fa-shopping-cart"></i>Add to Cart
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+                            <a href="details.php">
+                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                                <p class="price">$50</p>
+                                <p class="buttons">
+                                    <a href="details.php" class="btn btn-default">View Details</a>
+                                    <a href="details.php" class="btn btn-primary">
+                                        <i class="fa fa-shopping-cart"></i>Add to Cart
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+                            <a href="details.php">
+                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                                <p class="price">$50</p>
+                                <p class="buttons">
+                                    <a href="details.php" class="btn btn-default">View Details</a>
+                                    <a href="details.php" class="btn btn-primary">
+                                        <i class="fa fa-shopping-cart"></i>Add to Cart
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+                            <a href="details.php">
+                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                                <p class="price">$50</p>
+                                <p class="buttons">
+                                    <a href="details.php" class="btn btn-default">View Details</a>
+                                    <a href="details.php" class="btn btn-primary">
+                                        <i class="fa fa-shopping-cart"></i>Add to Cart
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <center>
+                    <ul class="pagination">
+                        <li><a href="shop.php">First Page</a></li>
+                        <li><a href="shop.php">1</a></li>
+                        <li><a href="shop.php">2</a></li>
+                        <li><a href="shop.php">3</a></li>
+                        <li><a href="shop.php">4</a></li>
+                        <li><a href="shop.php">5</a></li>
+                        <li><a href="shop.php">Last Page</a></li>
+                    </ul>
+                    </center>
+                        </div>
+                    </div>
                 </div>
             </div>
-     
-     <?php
-        include("includes/footer.php");
-     ?>
+        
+        <?php
+            include("includes/footer.php");
+        ?>
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+    </html>
