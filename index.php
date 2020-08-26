@@ -58,7 +58,41 @@
             </div>
             <div class="navbar-collapse collapse" id="navigation">
                 <div class="padding-nav">
-                    
+                <ul class="nav navbar-nav navbar-left">
+                        <li class="active">
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li >
+                            <a href="shop.php">Shop</a>
+                        </li>
+                        <li>
+                            <a href="checkout.php">My Account</a>
+                        </li>
+                        <li>
+                            <a href="cart.php">Shopping Cart</a>
+                        </li>
+                        <li>
+                            <a href="contact.php">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="cart.php" class="btn btn-primary navbar-btn right">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>4 items in cart</span>
+                </a>
+                <div class="navbar-collapse collapse-right">
+                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
+                        <span class="sr-only">Toggle Search</span>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="collapse clearfix" id="search">
+                    <form action="results.php" method="get" class="navbar-form">
+                        <div class="input-group">
+                            <input type="text" placeholder="Search" name="user_query" class="form-control" required>
+                            <button class="btn btn-primary" type="submit" value="Search" name="search">
+                                <i class="fa fa-search"></i>
+                            </button>
                 </div>
             </div>
         </div>
