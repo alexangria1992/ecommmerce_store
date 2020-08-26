@@ -129,4 +129,43 @@ function getpcatpro()
   }
 }
 
+function getcatpro()
+{
+    global $db;
+    if(isset($_GET['cat']))
+    {
+    $cat_id = $_GET['cat'];
+    $get_cat = "SELECT * FROM categories WHERE cat_id='$cat_id'";
+    $run_cat = mysqli_query($db, $get_cat);
+    $row_cat = mysqli_fetch_array($run_cat);
+    $cat_title = $row_cat['cat_title'];
+    $cat_desc = $row_cat['cat_desc'];
+
+    $get_products = "SELECT * FROM products WHERE cat_id='$cat_id'";
+    $run_products = mysqli_query($db, $get_products);
+    $count = mysqli_num_rows($run_products);
+
+    if($count == 0)
+    {
+        echo "
+        <div class='box'>
+        <h1> No Product Foound In This Product Category</h1>
+        </div>
+        ";
+    }
+    else 
+    {
+        echo "
+        <div class='box'>
+        <h1> $cat_title</h1>
+        <p>$cat_desc</p>
+        </div>
+        ";
+    }
+
+    }
+}
+
+
+
 ?> 

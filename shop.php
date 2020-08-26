@@ -213,6 +213,7 @@
                     </center>
                     <?php
                         getpcatpro();
+                        getcatpro();
                     ?>
                 
                     </div>
