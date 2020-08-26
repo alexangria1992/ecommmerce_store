@@ -170,6 +170,90 @@
          </div>
      </div>
 
+       <!-- Latest Header -->
+       <div id="hot">
+         <div class="box">
+             <div class="container">
+                 <div class="col-md-12">
+                     <h2>Latest this week</h2>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- Content -->
+     <div id="content" class="container">
+         <div class="row">
+             <div class="col-sm-4 col-sm-6  single">
+                 <div class="product">
+                     <a href="details.php">
+                         <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                     </a>
+                     <div class="text">
+                         <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                         <p class="price">$50</p>
+                         <p class="buttons">
+                             <a href="details.php" class="btn btn-default">View Details</a>
+                             <a href="details.php" class="btn btn-primary">
+                                 <i class="fa fa-shopping-cart"></i>Add to cart
+                             </a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-sm-4 col-sm-6   single">
+                 <div class="product">
+                     <a href="details.php">
+                         <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                     </a>
+                     <div class="text">
+                         <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                         <p class="price">$50</p>
+                         <p class="buttons">
+                             <a href="details.php" class="btn btn-default">View Details</a>
+                             <a href="details.php" class="btn btn-primary">
+                                 <i class="fa fa-shopping-cart"></i>Add to cart
+                             </a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-sm-4 col-sm-6  single">
+                 <div class="product">
+                     <a href="details.php">
+                         <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                     </a>
+                     <div class="text">
+                         <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                         <p class="price">$50</p>
+                         <p class="buttons">
+                             <a href="details.php" class="btn btn-default">View Details</a>
+                             <a href="details.php" class="btn btn-primary">
+                                 <i class="fa fa-shopping-cart"></i>Add to cart
+                             </a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-sm-4 col-sm-6  single">
+                 <div class="product">
+                     <a href="details.php">
+                         <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                     </a>
+                     <div class="text">
+                         <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
+                         <p class="price">$50</p>
+                         <p class="buttons">
+                             <a href="details.php" class="btn btn-default">View Details</a>
+                             <a href="details.php" class="btn btn-primary">
+                                 <i class="fa fa-shopping-cart"></i>Add to cart
+                             </a>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
