@@ -60,8 +60,45 @@ function getCats()
     {
         $cat_id = $row_cats['cat_id'];
         $cat_title = $row_cats['cat_title'];
-        echo "<li><a href='shop.php?p_cat=$cat_id'>$cat_title</a></li>";
+        echo "<li><a href='shop.php?cat=$cat_id'>$cat_title</a></li>";
     }
+}
+
+function getpcatpro()
+{
+    global $db;
+    if(isset($_GET['p_cat'])){
+    $p_cat_id = $_GET['p_cat'];
+    $get_p_cat = "SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";
+    $run_p_cat = mysqli_query($db, $get_p_cat);
+    $row_p_cat = mysqli_fetch_array($run_p_cat);
+    $p_cat_title = $row_p_cat['p_cat_title'];
+    $p_cat_desc = $row_p_cat['p_cat_desc'];
+
+    $get_products = "SELECT * FROM products WHERE p_cat_id='$p_cat_id'";
+    $run_products = mysqli_query($db, $get_products);
+    $count = mysqli_num_rows($run_products);
+
+    if($count == 0)
+    {
+        echo "
+        <div class='box'>
+        <h1> No Product Foound In This Product Category</h1>
+        </div>
+        ";
+    }
+    else 
+    {
+        echo "
+        <div class='box'>
+        <h1> $p_cat_title</h1>
+        <p>$p_cat_desc</p>
+        </div>
+        ";
+    }
+
+
+  }
 }
 
 ?> 
