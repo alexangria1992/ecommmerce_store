@@ -207,19 +207,17 @@
 
                     echo "<li><a href='shop.php?page=$total_pages' >".'Last Page'."</a></li>";
                         }
-                    }
-                    
+                    }         
                    ?>
                     </ul>
                     </center>
-                    <div class="row">
-                        <?php
-                            getpcatpro();
-                        ?>
-                    </div>
-                        </div>
+                    <?php
+                        getpcatpro();
+                    ?>
+                
                     </div>
                 </div>
+            </div>
             
         
         <?php
