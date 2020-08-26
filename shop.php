@@ -194,9 +194,21 @@
                     <center>
                     <ul class="pagination">
                    <?php
-
-                       }
+                        $query = "SELECT * fROM products";
+                        $result = mysqli_query($con, $query);
+                        $total_records = mysqli_num_rows($result);
+                        $total_pages = ceil($total_records / $per_page);
+                        echo "<li><a href='shop.php?page=1'>".'First Page'."</a></li>";
+                        for($i = 1; $i <=$total_pages; $i++)
+                        {
+                           echo "<li><a href='shop.php?page=".$i."'>".$i."</a></li>";
+   
+                        };
+   
+                        echo "<li><a href='shop.php?page=$total_pages' >".'Last Page'."</a></li>";
                     }
+                }
+                    
                    ?>
                     </ul>
                     </center>
