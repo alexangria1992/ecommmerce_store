@@ -136,6 +136,40 @@
         </div>
     </div>
 
+    <div id="advantages">
+         <div class="container">
+             <div class="same-height-row">
+                 <div class="col-sm-4">
+                     <div class="box same-height">
+                         <div class="icon">
+                             <i class="fa fa-heart"></i>
+                         </div>
+                         <h3><a href="">WE LOVE OUR CUSTOMERS</a></h3>
+                         <p>We are known to provide best possible service ever</p>
+                     </div>
+                 </div>
+                 <div class="col-sm-4">
+                     <div class="box same-height">
+                         <div class="icon">
+                             <i class="fa fa-tags"></i>
+                         </div>
+                         <h3><a href="">BEST PRICES</a></h3>
+                         <p>You can check on all other sites about the prices and then compare with is</p>
+                     </div>
+                 </div>
+                 <div class="col-sm-4">
+                     <div class="box same-height">
+                         <div class="icon">
+                             <i class="fa fa-thumbs-up"></i>
+                         </div>
+                         <h3><a href="">100% SATISFACTION GUARANTEED</a></h3>
+                         <p>Free returns on everything for 3 months.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
