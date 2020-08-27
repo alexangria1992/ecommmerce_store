@@ -51,7 +51,7 @@
                     Welcome: Guest
                 </a>
                 <a href="">
-                    Shopping Cart Total Price: $100, Total Items: 2
+                    Shopping Cart Total Price: $100, Total Items: <?php items(); ?>
                 </a>
             </div>
             <div class="col-md-12">
@@ -113,7 +113,7 @@
                 </div>
                 <a href="cart.php" class="btn btn-primary navbar-btn right">
                     <i class="fa fa-shopping-cart"></i>
-                    <span>4 items in cart</span>
+                    <span><?php items(); ?>items in cart</span>
                 </a>
                 <div class="navbar-collapse collapse-right">
                     <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
