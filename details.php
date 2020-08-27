@@ -4,6 +4,31 @@
     include("functions/functions.php");
 ?>
 
+<?php
+  if(isset($_GET['pro_id']))
+  {
+    $product_id = $_GET['pro_id'];
+    $get_product = "SELECT * FROM products WHERE product_id='$product_id'";
+    $run_product = mysqli_query($con, $get_product);
+    $row_product = mysqli_fetch_array($run_product);
+    $p_cat_id = $row_product['p_cat_id'];
+    
+    $pro_title = $row_product['product_title'];
+    $pro_price = $row_product['product_price'];
+    $pro_desc = $row_product['product_desc'];
+    $pro_img1 = $row_product['product_img1'];
+    $pro_img2 = $row_product['product_img2'];
+    $pro_img3 = $row_product['product_img3'];
+    $get_p_cat = "SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";
+    $run_p_cat = mysqli_query($con, $get_p_cat);
+    $row_p_cat = mysqli_fetch_array($run_p_cat);
+    $p_cat_title = $row_p_cat['p_cat_title'];
+
+
+
+}
+?>
+
 
 
 <!DOCTYPE html>
@@ -74,6 +99,7 @@
                         <li class="active">
                             <a  href="shop.php">Shop</a>
                         </li>
+                    
                         <li>
                             <a href="checkout.php">My Account</a>
                         </li>
@@ -115,8 +141,16 @@
         <div class="container">
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.php">Home</a></li>
-                    <li>Shop</li>
+                    <li>
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="shop.php">Shop</a>
+                     </li>
+                    <li>
+                        <a href="shop.php?p_cat=<?php echo $p_cat_id ?>"><?php  echo $p_cat_title;?></a>
+                    </li>
+                    <li><?php echo $pro_title;?></li>
                 </ul>
             </div>
             <div class="col-md-3">
@@ -138,19 +172,19 @@
                                 <div class="carousel-inner">
                                     <div class="item active">
                                         <center>
-                                            <img src="admin_area/product_images/product.jpg" class="img-responsive" >
+                                            <img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive" >
                                         </center>
                                     </div>
 
                                     <div class="item">
                                         <center>
-                                            <img src="admin_area/product_images/product2.jpg" class="img-responsive">
+                                            <img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">
                                         </center>
                                     </div>
 
                                     <div class="item">
                                         <center>
-                                            <img src="admin_area/product_images/product3.jpg" class="img-responsive">
+                                            <img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">
                                         </center>
                                     </div>
 
@@ -169,9 +203,9 @@
 
                     <div class="col-sm-6">
                         <div class="box">
-                            <h1 class="text-center">MARVEL Black Kids POLO T-Shirt</h1>
+                            <h1 class="text-center"> <?php echo $pro_title; ?></h1>
                             <div class="text-center">
-                                <form action="details.php" method="post" class="form-horizontal">
+                                <form action="index.php?add_cart=<?php echo $product_id; ?>" method="post" class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-md-5 control-label">Product Quantity</label>
                                         <div class="col-md-7">
@@ -199,7 +233,7 @@
                                         </div>
                                     </div>
                                     </div>
-                                    <p class="price">$50</p>
+                                    <p class="price">$<?php echo $pro_price; ?></p>
                                     <p class="text-center buttons">
                                         <button type="submit" class="btn btn-primary">
                                             <i class="fa fa-shopping-cart"></i>Add to Cart
@@ -213,19 +247,19 @@
                         <div class="row" id="thumbs">
                             <div class="col-xs-4">
                                 <a href="" class="thumb">
-                                    <img src="admin_area/product_images/product.jpg" alt="" class="img-responsive">
+                                    <img src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="" class="img-responsive">
                                 </a>
                             </div>
 
                             <div class="col-xs-4">
                                 <a href="" class="thumb">
-                                    <img src="admin_area/product_images/product2.jpg" alt="" class="img-responsive">
+                                    <img src="admin_area/product_images/<?php echo $pro_img2; ?>" alt="" class="img-responsive">
                                 </a>
                             </div>
 
                             <div class="col-xs-4">
                                 <a href="" class="thumb">
-                                    <img src="admin_area/product_images/product3.jpg" alt="" class="img-responsive">
+                                    <img src="admin_area/product_images/<?php echo $pro_img3; ?>" alt="" class="img-responsive">
                                 </a>
                             </div>
                         </div>
