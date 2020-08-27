@@ -201,7 +201,13 @@
                                 </a>
                             </div>
                         </div>
-
+                        <?php
+                          $get_products = "SELECT * FROM products ORDER BY rand() LIMIT 0,3";
+                          $run_products = mysqli_query($con, $get_products);
+                          while($row_products = mysqli_fetch_array($run_products)){
+                          $pro_id = $row_products['product_id'];
+                          }
+                        ?>
                     </form>
                 </div>
                 <?php
@@ -226,41 +232,33 @@
                             <h3 class="text-center">You also like these products</h3>
                         </div>
                     </div>
-                    <div class="center-responsive col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <a href="details.php">
-                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
+                  <?php
+                    $get_products = "SELECT * FROM products ORDER BY rand() LIMIT 0,3";
+                    $run_products = mysqli_query($con, $get_products);
+                    while($row_products = mysqli_fetch_array($run_products))
+                    {
+                        $pro_id = $row_products['product_id'];
+                        $pro_title = $row_products['product_title'];
+                        $pro_price = $row_products['product_price'];
+                        $pro_img1 = $row_products['product_img1'];
+                        echo "
+                        <div class='center-responsive col-md-3 col-sm-6'>
+                        <div class='product same-height'>
+                            <a href='details.php?pro_id=$pro_id'>
+                            <img src='admin_area/product_images/$pro_img1' class='img-responsive'>
                             </a>
-                            <div class="text">
-                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
-                                <p style="text-align: center;" class="price">$50</p>
-                            </div>
+                        <div class='text'>
+                            <h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+                            <p class='price'>$$pro_price</p>
+                           
                         </div>
                     </div>
+                </div>
+                        ";
+                  
 
-                    <div class="center-responsive col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <a href="details.php">
-                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
-                                <p style="text-align: center;" class="price">$50</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center-responsive col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <a href="details.php">
-                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
-                                <p style="text-align: center;" class="price">$50</p>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                  ?>
                 </div>
             </div>
 
@@ -277,7 +275,7 @@
                             <tbody>
                                 <tr>
                                     <td>Order Subtotal</td>
-                                    <th>$200.00</th>
+                                    <th>$<?php echo $total; ?>.00</th>
                                 </tr>
                                 <tr>
                                     <td>Shipping and Handling</td>
@@ -289,7 +287,7 @@
                                 </tr>
                                 <tr class="total">
                                     <td>Total</td>
-                                    <th>$200.00</th>
+                                    <th>$<?php echo $total; ?>.00</th>
                                 </tr>
                             </tbody>
                         </table>
