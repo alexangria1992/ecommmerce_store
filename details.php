@@ -204,12 +204,13 @@
                     <div class="col-sm-6">
                         <div class="box">
                             <h1 class="text-center"> <?php echo $pro_title; ?></h1>
-                            <div class="text-center">
-                                <form action="index.php?add_cart=<?php echo $product_id; ?>" method="post" class="form-horizontal">
+                              <?php add_cart(); ?>
+                                <form action="details.php?add_cart=<?php echo $product_id; ?>" method="post" class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-md-5 control-label">Product Quantity</label>
                                         <div class="col-md-7">
                                             <select name="product_qty" class="form-control">
+                                                <option>Select Quantity</option>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -219,20 +220,17 @@
                                             </select>
                                         </div>
                                     </div>
-
-
                                     <div class="form-group">
                                         <label for="" class="col-md-5 control-label">Product Size</label>
                                         <div class="col-md-7">
-                                            <select name="col-md-7" id="" class="form-control">
+                                            <select name="product_size" id="" class="form-control">
+                                                <option>Select Size</option>
                                                 <option>Small</option>
                                                 <option>Medium</option>
                                                 <option>Large</option>
-
                                             </select>
                                         </div>
-                                    </div>
-                                    </div>
+                                    </div>              
                                     <p class="price">$<?php echo $pro_price; ?></p>
                                     <p class="text-center buttons">
                                         <button type="submit" class="btn btn-primary">
@@ -240,9 +238,7 @@
                                         </button>
                                     </p>
                                 </form>
-
-
-                        </div>
+                             </div>
 
                         <div class="row" id="thumbs">
                             <div class="col-xs-4">
