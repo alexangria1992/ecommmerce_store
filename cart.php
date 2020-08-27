@@ -154,18 +154,20 @@
                                             $run_products = mysqli_query($con, $get_products);
                                     while($row_products = mysqli_fetch_array($run_products))
                                     {
-
-                                    
-                                      
+                                            $product_title = $row_products['product_title'];
+                                            $product_img1 = $row_products['product_img1'];
+                                            $only_price = $row_products['product_price'];
+                                            $sub_total = $row_products['product_price']*$pro_qty;           
+                                            $total += $sub_total;
                                     ?>
                                     <tr>
-                                        <td><img src="admin_area/product_images/product.jpg"></td>
-                                        <td><a href="">MARVEL Black Kids POLO T-Shirt</a></td>
-                                        <td>2</td>
-                                        <td>$50.00</td>
-                                        <td>Large</td>
-                                        <td><input type="checkbox" name="remove[]"></td>
-                                        <td>$100.00</td>
+                                        <td><img src="admin_area/product_images/<?php echo $product_img1; ?>"></td>
+                                        <td><a href=""><?php echo $product_title; ?></a></td>
+                                        <td><?php echo $pro_qty; ?></td>
+                                        <td>$<?php echo $only_price;  ?>.00</td>
+                                        <td><?php echo $pro_size; ?></td>
+                                        <td><input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?> "></td>
+                                        <td>$<?php echo $sub_total;  ?>.00</td>
                                     </tr>
                                         
                                     <?php
@@ -177,7 +179,7 @@
                                 <tfoot>
                                     <tr>
                                         <th colspan="5">Total</th>
-                                        <th colspan="2">$100.00</th>
+                                        <th colspan="2">$<?php echo $total;?>.00</th>
 
                                     </tr>
                                 </tfoot>
