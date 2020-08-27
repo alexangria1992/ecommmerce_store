@@ -269,7 +269,7 @@
                 <div class="box" id="details">
                     <p>
                         <h4>Product details</h4>
-                        <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                        <p><?php echo $pro_desc; ?> </p>
 
                     <h4>Size</h4>
                     <ul>
@@ -283,47 +283,38 @@
                 <div id="row" class="same-height-row">
                     <div class="col-md-3 col-sm-6">
                         <div class="box same-height headline">
-                            <h3 class="text-center">You also like these products</h3>
-                        </div>
-                    </div>
-                    <div class="center-responsive col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <a href="details.php">
-                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
-                                <p style="text-align: center;" class="price">$50</p>
-                            </div>
+                            <h3 class="text-center">You also like these products</h3>           
                         </div>
                     </div>
 
-                    <div class="center-responsive col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <a href="details.php">
-                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
-                                <p style="text-align: center;" class="price">$50</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    $get_products = "SELECT * FROM products ORDER BY RAND() LIMIT 0,3";
+                    $run_products = mysqli_query($con, $get_products);
+                    while($row_products = mysqli_fetch_array($run_products))
+                    {
+                        $pro_id = $row_products['product_id'];
+                        $pro_title = $row_products['product_title'];
+                        $pro_price = $row_products['product_price'];
+                        $pro_img1 = $row_products['product_img1'];
 
-                    <div class="center-responsive col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <a href="details.php">
-                                <img src="admin_area/product_images/product.jpg" class="img-responsive" alt="">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">MARVEL Black Kids POLO T-Shirt</a></h3>
-                                <p style="text-align: center;" class="price">$50</p>
+                        echo "
+                        <div class='center-responsive col-md-3 col-sm-6'>
+                            <div class='product same-height'>
+                                <a href='details.php?pro_id=$pro_id'>
+                                    <img src='admin_area/product_images/$pro_img1' class='img-responsive'>
+                                </a>
+                                <div class='text'>
+                                <h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+                                <p class='price'>$$pro_price</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        ";
+                    }
+             
+                ?>
+
                 </div>
-
-
             </div>
         </div>
     </div>
