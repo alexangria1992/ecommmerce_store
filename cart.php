@@ -204,6 +204,22 @@
 
                     </form>
                 </div>
+                <?php
+                  function update_cart(){
+                      global $con;
+                      if(isset($_POST['update']))
+                      {
+                          foreach($_POST['remove'] as $remove_id){
+                            $delete_product = "DELETE from cart WHERE p_id = '$remove_id'";
+                            $run_delete = mysqli_query($con, $delete_product);
+                            if($run_delete){
+                                echo "<script>window.open('cart.php', '_self')</script>";
+                            }
+                          }
+                      }
+                  }
+                  echo @$up_cart = update_cart();
+                ?>
                 <div id="row" class="same-height-row">
                     <div class="col-md-3 col-sm-6">
                         <div class="box same-height headline">
