@@ -24,7 +24,7 @@
                     Welcome: Guest
                 </a>
                 <a href="">
-                    Shopping Cart Total Price: $100, Total Items: 2 <?php items();  ?>
+                    Shopping Cart Total Price: <?php total_price(); ?>, Total Items: 2 <?php items();  ?>
                 </a>
             </div>
             <div class="col-md-6">

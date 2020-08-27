@@ -24,7 +24,7 @@
                     Welcome: Guest
                 </a>
                 <a href="">
-                    Shopping Cart Total Price: $100, Total Items: <?php items();?>
+                    Shopping Cart Total Price: <?php total_price();?>, Total Items: <?php items();?>
                 </a>
             </div>
             <div class="col-md-12">
@@ -122,8 +122,14 @@
                 <div class="box">
                     <form action="cart.php" method="post" enctype="multipart-form-data">
                         <h1>Shopping Cart</h1>
+                        <?php
+                            $ip_add = getRealUserIp();
+                            $select_cart = "SELECT * FROM cart WHERE ip_add = '$ip_add'";
+                            $run_cart = mysqli_query($db, $select_cart);
+                            $count = mysqli_num_rows($run_cart);
+                        ?>
                         <p class="text-muted">
-                            You currently have 3 item(s) in your cart.
+                            You currently have <?php echo $count ?> item(s) in your cart.
                         </p>
                         <div class="table-responsive">
                             <table class="table">
@@ -138,16 +144,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><img src="admin_area/product_images/product.jpg"></td>
-                                        <td><a href="">MARVEL Black Kids POLO T-Shirt</a></td>
-                                        <td>2</td>
-                                        <td>$50.00</td>
-                                        <td>Large</td>
-                                        <td><input type="checkbox" name="remove[]"></td>
-                                        <td>$100.00</td>
-                                    </tr>
+                                    <?php 
+                                      $total = 0;
+                                      while($row_cart = mysqli_fetch_array($run_cart)){
+                                            $pro_id = $row_cart['p_id'];
+                                            $pro_size = $row_cart['size'];
+                                            $pro_qty = $row_cart['qty'];
+                                            $get_products = "SELECT * FROM products WHERE product_id ='$pro_id'";
+                                            $run_products = mysqli_query($con, $get_products);
+                                    while($row_products = mysqli_fetch_array($run_products))
+                                    {
 
+                                    
+                                      
+                                    ?>
                                     <tr>
                                         <td><img src="admin_area/product_images/product.jpg"></td>
                                         <td><a href="">MARVEL Black Kids POLO T-Shirt</a></td>
@@ -157,16 +167,12 @@
                                         <td><input type="checkbox" name="remove[]"></td>
                                         <td>$100.00</td>
                                     </tr>
-
-                                    <tr>
-                                        <td><img src="admin_area/product_images/product.jpg"></td>
-                                        <td><a href="">MARVEL Black Kids POLO T-Shirt</a></td>
-                                        <td>2</td>
-                                        <td>$50.00</td>
-                                        <td>Large</td>
-                                        <td><input type="checkbox" name="remove[]"></td>
-                                        <td>$100.00</td>
-                                    </tr>
+                                        
+                                    <?php
+                                       } 
+                                    }
+                                    ?>
+                                 
                                 </tbody>
                                 <tfoot>
                                     <tr>
